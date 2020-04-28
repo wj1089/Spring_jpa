@@ -20,49 +20,46 @@ import com.occamsrazor.web.util.Messenger;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-		@Autowired UserServer userServer;
+	@Autowired UserService userService;
+	@PostMapping("/join")
+	public Messenger join(@RequestBody User user) {
+		int count = userService.count();
+		userService.add(user);
+		return (userService.count() == count + 1) ? Messenger.SUCCESS : Messenger.FAIL;
+	}
+	@GetMapping("/list")
+	public List<User> list(){
+		return userService.list();
+	}
 	
-		@PostMapping("/join")
-		public Messenger join(@RequestBody User user) {
-			int count = userServer.count();
-			userServer.add(user);
-			return (userServer.count()==count +1)?Messenger.SUCCESS:Messenger.FAIL;
+	@PostMapping("/login")
+	public Map<String,Object> login(@RequestBody User user) {
+		Map<String,Object> returnMap = new HashMap<>();
+		User loginedUser = userService.login(user);
+		if(loginedUser != null) {
+			returnMap.put("user", loginedUser);
+			returnMap.put("messenger", Messenger.SUCCESS);
+		}else {
+			returnMap.put("messenger", Messenger.FAIL);
 		}
-		@GetMapping("/list")
-		public List<User> list(){
-			return userServer.list();
-		}
-		
-		@PostMapping("/login")
-		public Map<String, Object> login (@RequestBody User user){
-			Map<String, Object> returnMap = new HashMap<>();
-			User loginedUser = userServer.login(user);
-			if(loginedUser != null) {
-				returnMap.put("user",loginedUser);
-				returnMap.put("messenger", Messenger.SUCCESS);
-			}else {
-				returnMap.put("messenger", Messenger.FAIL);
-			}
-			return returnMap;
-		}
-		
-		@GetMapping("/detail/{userid}")
-		public User detail(@PathVariable String userid) {
-			return userServer.detail(userid);
-		}
-		@PutMapping("/update")
-		public Messenger update(@RequestBody User user) {
-			System.out.println("update 정보:::"+user);
-			return (userServer.update(user))? Messenger.SUCCESS:Messenger.FAIL;
-		}
-		@DeleteMapping("/remove/{userid}")
-		public Messenger remove(@PathVariable String userid) {
-			System.out.println("delete 정보::: "+userid);
-			return(userServer.remove(userid))?Messenger.SUCCESS:Messenger.FAIL;
-		}
+		return returnMap;
+	}
+	@GetMapping("/detail/{userid}")
+	public User detail(@PathVariable String userid) {
+		return userService.detail(userid);
+	}
+	@PutMapping("/update")
+	public Messenger update(@RequestBody User user) {
+		System.out.println("update 정보 ::: "+user);
+		return (userService.update(user)) ? Messenger.SUCCESS: Messenger.FAIL;
+	}
+	@DeleteMapping("/remove/{userid}")
+	public Messenger remove(@PathVariable String userid) {
+		System.out.println("delete 정보 ::: "+userid);
+		return (userService.remove(userid)) ? Messenger.SUCCESS: Messenger.FAIL;
+	}
+	
 }
-
-
 
 
 
