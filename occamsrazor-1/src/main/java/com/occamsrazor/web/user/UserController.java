@@ -26,8 +26,7 @@ public class UserController {
 		public Messenger join(@RequestBody User user) {
 			int count = userServer.count();
 			userServer.add(user);
-//			return (userServer.count()==count +1)?Messenger.SUCCESS:Messenger.FAIL;
-			return Messenger.SUCCESS;
+			return (userServer.count()==count +1)?Messenger.SUCCESS:Messenger.FAIL;
 		}
 		@GetMapping("/list")
 		public List<User> list(){

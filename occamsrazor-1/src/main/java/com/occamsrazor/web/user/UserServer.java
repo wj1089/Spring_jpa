@@ -11,4 +11,6 @@ public interface UserServer {
 	public boolean update(User user);
 	public boolean remove(String userid);
 	public List<User> list();
+//	public List<User>readFile();
+	/* public boolean idCheck(String userid); */
 }

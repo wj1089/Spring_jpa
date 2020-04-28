@@ -83,7 +83,7 @@ footer {
   </nav>
   
   <article>
-   <form action="#">
+   <form >
    	<label>NAME </label> <br>
    	<input id="name" type="text"/><br>
    	<label>ID</label><br>
@@ -164,6 +164,7 @@ $('#join_button')
 		dataType: 'json',
 		contentType: 'application/json',
 		success: d =>{
+			console.log('JOIN RESULT' ::: +d)
 			if(d === 'SUCCESS'){
 				location.href = 'signin.html'
 			}else{

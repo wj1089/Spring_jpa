@@ -32,6 +32,8 @@ public class UserServerImpl implements UserServer{
 	}
 	@Override
 	public int count() {
+		
+		
 		return map.size();
 	}
 	@Override
@@ -83,4 +85,22 @@ public class UserServerImpl implements UserServer{
 		}
 		return list;
 	}
+
+	/*
+	 * @Override public boolean idCheck(String userid) { boolean ok=true; List<User>
+	 * list = readFile(); for() {
+	 * 
+	 * }
+	 * 
+	 * return false; }
+	 */
+	/*
+	 * @Override public List<User> readFile() { List<User> userlist = new
+	 * ArrayList<>(); List<String> list = new ArrayList<>(); try { File file = new
+	 * File(FILE_PATH+"list.txt") }
+	 * 
+	 * return null; }
+	 */
+
+	
 }
