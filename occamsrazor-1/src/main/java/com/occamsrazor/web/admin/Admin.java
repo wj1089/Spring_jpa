@@ -1,9 +1,7 @@
 package com.occamsrazor.web.admin;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter @Setter
 public class Admin {
@@ -11,7 +9,9 @@ public class Admin {
 	passwd, name, position, profile, 
 	email, phoneNumber, registerDate;
 	
-	private String tostring() {
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
 		return String.format("%s,%s,%s,%s,%s,%s,%s,%s", 
 				employNumber, passwd, name, position, profile, email, phoneNumber, registerDate);
 		}

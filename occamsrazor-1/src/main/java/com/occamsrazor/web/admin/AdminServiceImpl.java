@@ -41,6 +41,7 @@ public class AdminServiceImpl implements AdminService{
 		for(int i=0;i<4;i++) {
 			startNum += String.valueOf((int)(Math.random()*10));
 		}
+		System.out.println(startNum);
 		return startNum;
 	}
 	@Override
