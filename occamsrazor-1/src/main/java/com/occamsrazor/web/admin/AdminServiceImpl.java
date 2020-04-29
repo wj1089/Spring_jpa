@@ -26,7 +26,6 @@ public class AdminServiceImpl implements AdminService{
 /*employNumber, passwd, <name, position>, profile,<email, phoneNumber>, registerDate;*/
 	@Override
 	public void register(Admin admin) {
-		System.out.println(admin);
 		admin.setEmployNumber(createEmployNumber());//4자리 랜덤
 		admin.setPasswd("1");
 		admin.setRegisterDate(createCurrentDate()); //찾는것, 자바에서 현재 날짜...로직?
@@ -38,40 +37,26 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	private String createEmployNumber() {
-		System.out.println("사번 :"+String.format("%04d", Math.random()*10000+1000));
 		String startNum ="";
 		for(int i=0;i<4;i++) {
-			startNum += (int)Math.random()*10;
+			startNum += String.valueOf((int)(Math.random()*10));
 		}
-//		String.format("%04d", Math.random()*10000+1000);
 		return startNum;
 	}
-	
-	
-
 	@Override
 	public List<Admin> findAll() {
-		
 		return adminDao.selectAll();
 	}
-
 	@Override
 	public Admin findOne(String employNumber) {
 		return adminDao.selectOne(employNumber);
 	}
-
 	@Override
 	public void modify(Admin admin) {
 		adminDao.update(admin);
 	}
-
 	@Override
 	public void remove(Admin admin) {
 		adminDao.delete(admin);
-		
 	}
-
-
-
-	
 }

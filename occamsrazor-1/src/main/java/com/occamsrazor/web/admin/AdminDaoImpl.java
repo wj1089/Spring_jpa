@@ -15,6 +15,7 @@ public class AdminDaoImpl implements AdminDao{
 
 	@Override
 	public void insert(Admin admin) {
+		System.out.println("3. AdminDaoImpl insert "+admin);
 		 try {
 			 BufferedWriter writer = 
 					 new BufferedWriter(
@@ -23,6 +24,7 @@ public class AdminDaoImpl implements AdminDao{
 			 writer.write(admin.toString());
 			 writer.newLine();
 			 writer.flush();
+			 System.out.println("4. File input success");
 		 }catch(Exception e) {
 			 System.out.println(Messenger.FILE_INSERT_ERROR);
 		 } 
@@ -38,35 +40,37 @@ public class AdminDaoImpl implements AdminDao{
 		}
 		return list;
 	}
-
+	
 	@Override
-	public void update(Admin admin) {
-try {
+	public Admin selectOne(String employNumber) {
+		Admin admin = null;
+		try {
 			
 		}catch(Exception e) {
 			
 		}
-		return list;
+		return null;
 	}
+	
+	@Override
+	public void update(Admin admin) {
+		try {
+			
+		}catch(Exception e) {
+			
+		}
 	}
+	
 
 	@Override
 	public void delete(Admin admin) {
-try {
+		try {
 			
 		}catch(Exception e) {
 			
-		}
-		return list;
 	}
-	}
-
-	@Override
-	public Admin selectOne(String employNumber) {
-		Admin admin = 
-		return null;
-	}
-
+}
 	
+
 	
 }

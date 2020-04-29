@@ -22,7 +22,9 @@ import com.occamsrazor.web.util.Messenger;
 											 //이하래 전부 기능
 		@PostMapping("")
 		public Messenger post(@RequestBody Admin admin) {
+			System.out.println("1. AdminController post"+admin);
 			adminService.register(admin);
+			System.out.println("5. AdminController post");
 			return Messenger.SUCCESS;
 		}
 		@GetMapping("")
@@ -31,7 +33,7 @@ import com.occamsrazor.web.util.Messenger;
 		}
 		@GetMapping("/{employNumber}")
 		public Admin detail(@PathVariable String employNumber) {
-			return adminService.detail(employNumber);
+			return adminService.findOne(employNumber);
 		}
 		@PutMapping("/{employNumber}")
 		public Messenger put(@RequestBody Admin admin) {

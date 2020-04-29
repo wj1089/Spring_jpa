@@ -95,42 +95,33 @@
         </tr>
     </table>
  <script>
- 
- employNumber, 
-	passwd, name, position, profile, 
-	email, phoneNumber, registerDate;
- 
- 
- 
+/*  name, position,  
+	email, phoneNumber*/
+	
      $('#kcdc').css({ width: '80%', height: '900px' }).addClass('border_black center')
      $('#tr_1').css({ width: '80%', height: '50px' }).addClass('border_black center')
      $('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
      $('#kcdc td').addClass('border_black', 'width_full')
      $('#register_a').css({color: 'blue',cursor:'none','text-decoration':'none'})
      $('#admin_register').click(e=>{
-         e.preventDefault()
-		$.ajax({
-			url:'/admins',
-			type:'post',
-			data: {
-				employNumber : $('#employNumber').val,
-				name : $('#name').val,
-				eposition : $('#eposition').val,
-				profile : $('#profile').val,
-				email : $('#email').val,
-				phoneNumber : $('#phoneNumber').val,
-			}
-			dataType: 'json',
-			contenType: 'application/json',
-			success:d =>{
-				location.href = 'access.html'
-			}
-			error: (request,status,error)=>{
-				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error)
-			}
-		})
+    	 e.preventDefault()
+    	 $.ajax({
+    		 url:"/admis",
+    		type:"post",
+    		data:JSON.stringify({
+    			position : $('#position).val(),
+    			phoneNumber : $('#phoneNumber').val(),
+    			name : $('#name').val(),
+    			email : $('#email').val(),
+    		})
+    		dataType:'json',
+    		contentType:'application/json'
+    		success:d =>{
+    			location.href = 'access.html'
+    		},
+    			error: (r,x,m)=>{r.status}
+    	 })
      })
  </script>
 </body>
- 
 </html>
