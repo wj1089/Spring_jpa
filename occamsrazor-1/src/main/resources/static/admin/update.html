@@ -86,7 +86,7 @@
                 </tr>
                 <tr style="height: 20%">
                   <td colspan="3">
-                    <input id="admin_register" type="button" value="등록하기" style="width: 200px; height: 100px;font-size: 30px;"/>
+                    <input id="admin_update" type="button" value="등록하기" style="width: 200px; height: 100px;font-size: 30px;"/>
                     <input id="admin_cancel" type="button" value="취소하기" style="width: 200px; height: 100px;margin-left: 50px;font-size: 30px;"/>
                   </td>
                 </tr>
@@ -100,18 +100,16 @@
 	passwd, name, position, profile, 
 	email, phoneNumber, registerDate;
  
- 
- 
      $('#kcdc').css({ width: '80%', height: '900px' }).addClass('border_black center')
      $('#tr_1').css({ width: '80%', height: '50px' }).addClass('border_black center')
      $('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
      $('#kcdc td').addClass('border_black', 'width_full')
      $('#register_a').css({color: 'blue',cursor:'none','text-decoration':'none'})
-     $('#admin_register').click(e=>{
-         e.preventDefault()
+     $('#admin_update').click(e=>{
+		e.preventDefault()
 		$.ajax({
-			url:'/admins',
-			type:'post',
+			url:'/admins/'+'1234',
+			type:'put',
 			data: {
 				employNumber : $('#employNumber').val,
 				name : $('#name').val,
@@ -123,14 +121,11 @@
 			dataType: 'json',
 			contenType: 'application/json',
 			success:d =>{
-				location.href = 'access.html'
+				
 			}
-			error: (request,status,error)=>{
-				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error)
-			}
+			error:
 		})
      })
  </script>
 </body>
  
-</html>
