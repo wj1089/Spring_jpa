@@ -18,8 +18,8 @@ import com.occamsrazor.web.util.Messenger;
 	@RequestMapping("/admins")
 	public class AdminController {
 		
-		@Autowired AdminService adminService;
-		
+		@Autowired AdminService adminService;//속성
+											 //이하래 전부 기능
 		@PostMapping("")
 		public Messenger post(@RequestBody Admin admin) {
 			adminService.register(admin);

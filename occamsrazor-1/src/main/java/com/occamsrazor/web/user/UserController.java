@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.occamsrazor.web.admin.Admin;
 import com.occamsrazor.web.util.Messenger;
+// userid,passwd,name,ssn, addr
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
-	@Autowired UserService userService;
 	@PostMapping("")
 	public Messenger post(@RequestBody User user) {
 		return Messenger.SUCCESS;
@@ -38,7 +39,7 @@ public class UserController {
 	public Messenger put(@RequestBody User user) {
 		return Messenger.SUCCESS;
 	}
-	@DeleteMapping("")
+	@DeleteMapping("/{userid}")
 	public Messenger delete(@RequestBody User user) {
 		return Messenger.SUCCESS;
 	}
