@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 import com.occamsrazor.web.user.User;
 import com.occamsrazor.web.util.Data;
 import com.occamsrazor.web.util.Messenger;
-
+////
 
 @Service
 public class AdminServiceImpl implements AdminService{
