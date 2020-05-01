@@ -2,9 +2,11 @@ package com.occamsrazor.web.admin;
 
 import java.util.List;
 
-import com.occamsrazor.web.user.User;
+import org.springframework.stereotype.Component;
 
-public interface AdminService {
+import com.occamsrazor.web.user.User;
+@Component
+public interface AdminService {//<이건 타입>AdminService ad = new ASI
 
 	public void register(Admin admin);
 

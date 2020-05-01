@@ -20,11 +20,14 @@ import com.occamsrazor.web.user.User;
 import com.occamsrazor.web.util.Data;
 import com.occamsrazor.web.util.Messenger;
 
+
 @Service
 public class AdminServiceImpl implements AdminService{
 	@Autowired AdminDao adminDao;
-/*employNumber, passwd, <name, position>, profile,<email, phoneNumber>, registerDate;*/
+	
+	
 	@Override
+	/*employNumber, passwd, <name, position>, profile,<email, phoneNumber>, registerDate;*/
 	public void register(Admin admin) {
 		admin.setEmployNumber(createEmployNumber());//4자리 랜덤
 		admin.setPasswd("1");

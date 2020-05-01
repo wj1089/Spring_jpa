@@ -20,6 +20,8 @@ import com.occamsrazor.web.util.Messenger;
 		
 		@Autowired AdminService adminService;//속성
 											 //이하래 전부 기능
+		@Autowired Admin admin; //DI한다
+		
 		@PostMapping("")
 		public Messenger post(@RequestBody Admin admin) {
 			System.out.println("1. AdminController post");
