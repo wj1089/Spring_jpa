@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 	@GetMapping("/")
 	public String hello() {
-		return "index.html";
+		return "index";//thymeleaf에서는 .html이 디폴트값이기 때문에 안쓴다.
 	}
+	@GetMapping("/home")
+	public String home() {
+		return "user";
+	}
+	
+	
 }
