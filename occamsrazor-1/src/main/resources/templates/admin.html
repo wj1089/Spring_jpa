@@ -4,84 +4,10 @@
     <meta charset="UTF-8">
     <title>관리자 페이지</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/global.css" />
 </head>
-
-
 <body>
-    <table id="kcdc">
-        <tr id="tr_1">
-            <td>
-                <img src="http://www.cdc.go.kr/cdc/img/main/h1_logo.png">
-            </td>
-            <td colspan="2">
-                <input id="search" style="width:500px;height:50px;float:left;margin-left:50px" type="text">
-                <input id="search_button" style="width:150px;height:50px;float:left;margin-left:50px;background-color: #80003e; color: white" type="button" value="검색"> <br>
-            </td>
-            <td>
-                <a id="login_a" style="cursor:pointer;text-decoration: underline">회원가입</a>
-                <a id="join_a" style="cursor:pointer;text-decoration: underline">로그인</a>
-                <a id="register_a" style="cursor:pointer;text-decoration: underline">관리자 등록</a>
-                <a id="access_a" style="cursor:pointer;text-decoration: underline">관리자 접속</a>
-                
-            </td>
-        </tr>
-        <tr id="menu">
-            <td colspan="4">
-            </td>
-        </tr>
-        <tr>
-            <td id="content" colspan="4">
-                <img src="http://www.cdc.go.kr/cdc/img/main/visual_default_main_01.jpg">
-            </td>
-        </tr>
-        <tr id="menu_2">
-            <td>
-                <img src="http://www.cdc.go.kr/cdc/img/main/visual_default_05.jpg">
-                <h3>미세먼지 건강 수칙</h3>
-            </td>
-            <td>
-                <img src="http://www.cdc.go.kr/cdc/img/main/visual_default_12.png">
-                <h3>법정 감염병 분류 체계 개편</h3>
-            </td>
-            <td>
-                <img src="http://www.cdc.go.kr/cdc/img/main/visual_default_10.jpg">
-                <h3>인플루엔자</h3>
-            </td>
-            <td>
-                <img src="http://www.cdc.go.kr/cdc/img/main/visual_default_08.jpg">
-                <h3>액상형 전자담배관련 폐손상</h3>
-            </td>
-        </tr>
-    </table>
- <script>
-     $('#kcdc').css({ width: '80%', height: '900px' }).addClass('border_black center')
-     $('#tr_1').css({ width: '80%', height: '50px' }).addClass('border_black center')
-     $('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
-     $('#kcdc td').addClass('border_black', 'width_full')
-     $('#register_a').click(e=>{
-     	e.preventDefault()
-     	location.href = "admin/register.html"
-     })
-     $('#access_a').click(e=>{
-    	e.preventDefault()
-    	$.ajax({
-    		url:"/",
-    		type:"post",
-    		data:JSON.stringify({
-    			position : $('#position').val(),
-    			phoneNumber : $('#phoneNumber').val(),
-    			name : $('#name').val(),
-    			email : $('#email').val(),
-    		})
-    		dataType:'',
-    		contentType :'application/json',
-    		success : d=>{
-    			location.href =''
-    		},
-    		error :(r,x,m)=>{r.status}
-    	})
-     })
- </script>
+Admin 진입
+<a href="/home">홈으로 가기 </a>
 </body>
-
 </html>
