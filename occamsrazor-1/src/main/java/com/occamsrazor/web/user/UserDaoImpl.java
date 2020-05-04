@@ -1,16 +1,13 @@
 package com.occamsrazor.web.user;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.occamsrazor.web.admin.Admin;
 import com.occamsrazor.web.util.Data;
 
 @Repository
@@ -32,7 +29,7 @@ public class UserDaoImpl implements UserDao{
 		List<User> list= new ArrayList<>();
 		List<String> temp = new ArrayList<>();
 		try {
-			File file = new File(Data.USER_PATH.toString()+"user_list.csv");
+			File file = new File(Data.USER_PATH+"user_list.csv");
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String message = "";
 			while((message = reader.readLine())!=null) {
