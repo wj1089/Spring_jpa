@@ -29,6 +29,7 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	/*employNumber, passwd, <name, position>, profile,<email, phoneNumber>, registerDate;*/
 	public void register(Admin admin) {
+		System.out.println("2. AdminServiceImpl register "+admin);
 		admin.setEmployNumber(createEmployNumber());//4자리 랜덤
 		admin.setPasswd("1");
 		admin.setRegisterDate(createCurrentDate()); //찾는것, 자바에서 현재 날짜...로직?

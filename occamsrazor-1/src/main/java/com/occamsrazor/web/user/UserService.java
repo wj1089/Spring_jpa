@@ -6,16 +6,17 @@ import com.occamsrazor.web.admin.Admin;
 
 public interface UserService {
 
-
-	public void register (User user);
-
-	public List<User> findAll();
-
-	public User fineOne(String employNumber);
-
-	public void modify(User user);
-
-	public void remove(User user);
+	 List<User> findAll();
+	
+	/*
+	 * public void register (User user);
+	 * 
+	 * public User fineOne(String employNumber);
+	 * 
+	 * public void modify(User user);
+	 * 
+	 * public void remove(User user);
+	 */
 	
 
 }

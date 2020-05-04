@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>사용자 페이지</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/resources/css/global.css" />
-    <script type="text/javascript" src="/resources/js/user.js"></script>
-    <script type="text/javascript" src="/resources/js/admin.js"></script>
+	<link rel="stylesheet" href="/resources/css/global.css" />
+	<script type="text/javascript" src="/resources/js/user.js"></script>
 </head>
 <body>
     <table id="kcdc">
@@ -14,16 +13,14 @@
             <td>
                 <img src="http://www.cdc.go.kr/cdc/img/main/h1_logo.png">
             </td>
-            <td colspan="2">
-                <input id="search" style="width:500px;height:50px;float:left;margin-left:50px" type="text">
-                <input id="search_button" style="width:150px;height:50px;float:left;margin-left:50px;background-color: #80003e; color: white" type="button" value="검색"> <br>
+          	 <td colspan="2">
+                <input id="search" type="text"><input id="search_button" type="button" value="검색"> <br>
             </td>
             <td>
-                <a id="login_a" style="cursor:pointer;text-decoration: underline">회원가입</a>
-                <a id="join_a" style="cursor:pointer;text-decoration: underline">로그인</a>
-                <a id="register_a" style="cursor:pointer;text-decoration: underline">관리자 등록</a>
-                <a id="access_a" style="cursor:pointer;text-decoration: underline">관리자 접속</a>
-                
+               <input id="login_button" type="button" value="로그인">
+                <input id="join_Button" type="button" value="회원가입">
+                <input id="register_Button" type="button" value="등록">
+                <input id="access_Button" type="button" value="접속">
             </td>
         </tr>
         <tr id="menu">
@@ -54,10 +51,11 @@
             </td>
         </tr>
     </table>
- <script>
- 	user.init()
-     
- </script>
+        <script>
+        user.init()
+        
+
+    </script>
 </body>
 
 </html>
