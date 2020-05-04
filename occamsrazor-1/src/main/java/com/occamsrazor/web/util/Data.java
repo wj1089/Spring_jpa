@@ -25,6 +25,6 @@ public enum Data {
 		default:
 				break;
 		}
-		return returnValue;
+		return  returnValue;
 	}
 }
