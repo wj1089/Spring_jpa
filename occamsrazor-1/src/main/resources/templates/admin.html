@@ -43,16 +43,22 @@
             top: 0;
             width: 100%;
         }
-        #userData {
+        #userData, #items {
             border: 1px solid black;
             text-align: center;
             margin: 0 auto;
         }
-        #userData tr {
+        #userData tr th, #items tr th {
+            border: 1px solid black;
+            text-align: center;
+            margin: 0 auto;
+            background-color: yellow
+        }
+        #userData tr, #items tr {
             height: 30px;
             border: 1px solid black;
         }
-        #userData tr td {
+        #userData tr td, #items tr td {
             width: 150px;
             border: 1px solid black;
         }
@@ -96,8 +102,8 @@
 <ul id="navi">
   <li><a class="active" href="#home">관리자</a></li>
   <li><a href="#news">회원관리</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a href="#contact">contact</a></li>
+  <li><a href="#about">contact</a></li>
 </ul>
     <table id="kcdc" style="margin: 100px auto; height: 70%">
         <tr>
@@ -106,12 +112,11 @@
             		<h3 id="total_count" style="margin-bottom: 50px">총회원수 : </h3>
             		<div style="margin-bottom: 50px">이름 조회 : <input type="text" /></div>
             		<ul id="side_menu">
-						  <li><a id="user_list" class="active" href="#home">사용자 목록</a></li>
-						  <li><a id="admin_list" href="#news">관리자 목록</a></li>
-						  <li><a href="#contact">음원 차트</a></li>
-						  <li><a href="#about">앨범 차트</a></li>
+						  <li><a id="user_list" class="active" style="cursor: pointer">사용자 목록</a></li>
+						  <li><a style ="cursor: pointer">관리자 목록</a></li>
+						  <li><a id="item_list" style="cursor: pointer">분실물 목록</a></li>
+						  <li><a style="cursor: pointer">앨범 차트</a></li>
 						</ul>
-            	
             	</div>
             </td>
             <td colspan="3" style="border: 3px solid black; width: 80%;margin-top: 100px">
@@ -142,6 +147,7 @@
                         </tr>
                         
                     </table>
+                    
             	</div>
             </td>
         </tr>

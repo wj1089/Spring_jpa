@@ -17,16 +17,15 @@ user = (()=>{ // 즉시실행구조 , 모듈패턴
 		).done(()=>{
 			setContentView()
 			$('#register_Button').click(e => {
-				$('#content').empty()
-				$('#content').html(adminVue.join())
+				e.preventDefault()
+				$('#main-container').html(adminVue.join())
 				$(`<input type="button" />`)
 				.attr({'value':'등록하기'})
-				.css({width: '200px', height: '100px', 'font-size': '30px'})
+				.css({'width': '200px', 'height': '100px', 'font-size': '30px'})
 				.appendTo('#button_box')
 				.click(e => {
 					alert('등록버튼 클릭')
 				})
-	       
 	        	$(`<input type="button" />`)
 	        	.attr({'value':'취소하기'})
 	        	.css({width: '200px', height: '100px', 'font-size': '30px'})
@@ -45,21 +44,21 @@ user = (()=>{ // 즉시실행구조 , 모듈패턴
 	        	.click(e => {
 	        		e.preventDefault()
 	        		location.href="/admin"
-//	        		$.ajax({
-//	        			url : ``,
-//	        			type : `post`,
-//	        			data : JSON.stringify({
-//	        				
-//	        			}),
-//	        			dataType : `json`,
-//	        			contentType : `application/json`,
-//	        			success : d=> {
-//	        				location.href = "/admin"
-//	        			},
-//	        			error : (r,x,e) => {
-//	        				alert(r.status)
-//	        			}
-//	        		})
+	        		$.ajax({
+	        			url : 'admins',
+	        			type : 'post',
+	        			data : JSON.stringify({
+	        				
+	        			}),
+	        			dataType : 'json',
+	        			contentType : 'application/json',
+	        			success : d=> {
+	        				location.href = "/admin"
+	        			},
+	        			error : (r,x,e) => {
+	        				alert(r.status)
+	        			}
+	        		})
 					
 				})
 				$(`<input type="button"/>`)

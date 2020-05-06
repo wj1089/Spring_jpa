@@ -29,12 +29,31 @@ public class UserServiceImpl implements UserService{
 	@Autowired UserDao userDao;
 
 	@Override
-	public List<User> findAll() {
-		return userDao.selectAll();
+	public void register(User user) {
+		userDao.insert(user);
 	}
-	/*
-	 * @Override public void register(User user) { userDao.insert(user); }
-	 */
+
+	@Override
+	public List<User> findAll() {
+		return userDao.selectAll();	
+	
+	}
+
+	@Override
+	public User findOne(String userid) {
+		
+		return userDao.selectOne(userid);
+	}
+
+	@Override
+	public void modify(User user) {
+			userDao.update(user);		
+	}
+
+	@Override
+	public void remove(User user) {
+			userDao.remove(user);		
+	}
 
 	/*
 	 * @Override public User fineOne(String employNumber) { return

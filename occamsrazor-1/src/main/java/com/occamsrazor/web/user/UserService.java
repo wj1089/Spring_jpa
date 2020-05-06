@@ -5,20 +5,17 @@ import java.util.List;
 import com.occamsrazor.web.admin.Admin;
 
 public interface UserService {
-
-	 List<User> findAll();
 	
-	/*
-	 * public void register (User user);
-	 * 
-	 * public User fineOne(String employNumber);
-	 * 
-	 * public void modify(User user);
-	 * 
-	 * public void remove(User user);
-	 */
-	
+	public List<User> findAll();
 
+	public User findOne(String userid);
+
+	public void modify(User user);
+
+	public void remove(User user);
+
+	public void register(User user);
+	
 }
 
 

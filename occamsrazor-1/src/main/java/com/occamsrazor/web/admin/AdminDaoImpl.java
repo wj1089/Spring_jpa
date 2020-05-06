@@ -20,7 +20,7 @@ public class AdminDaoImpl implements AdminDao{
 			 BufferedWriter writer = 
 					 new BufferedWriter(
 					 new FileWriter(
-					 new File(Data.ADMIN_PATH.toString()+Data.LIST+Data.CSV),true));
+					 new File(Data.ADMINS.toString()),true));
 			 writer.write(admin.toString());
 			 writer.newLine();
 			 writer.flush();
@@ -68,9 +68,6 @@ public class AdminDaoImpl implements AdminDao{
 			
 		}catch(Exception e) {
 			
+		}
 	}
-}
-	
-
-	
 }

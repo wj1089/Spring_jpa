@@ -23,22 +23,36 @@ import com.occamsrazor.web.util.Messenger;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-	@Autowired UserService userService;
+	@Autowired
+	UserService userService;
+
+	@PostMapping("")
+	public Messenger post(@RequestBody User user) {
+		userService.register(user);
+		return Messenger.SUCCESS;
+	}
+
 	@GetMapping("")
-	public List<User> list(){
+	public List<User> list() {
 		return userService.findAll();
 	}
-	/*
-	 * @PostMapping("") public Messenger post(@RequestBody User user) { return
-	 * Messenger.SUCCESS; }
-	 */
-	/*
-	 * @GetMapping("/{userid}") public User detail() { return null; }
-	 * 
-	 * @PutMapping("/{userid}") public Messenger put(@RequestBody User user) {
-	 * return Messenger.SUCCESS; }
-	 * 
-	 * @DeleteMapping("/{userid}") public Messenger delete(@RequestBody User user) {
-	 * return Messenger.SUCCESS; }
-	 */
+
+	@GetMapping("/{userid}")
+	public User detail(@PathVariable String userid) {
+		return userService.findOne(userid);
+	}
+
+	@PutMapping("/{userid}")
+	public Messenger put(@RequestBody User user) {
+		userService.modify(user);
+		return Messenger.SUCCESS;
+	}
+
+	@DeleteMapping("/{userid}")
+	public Messenger delete(@RequestBody User user) {
+		userService.remove(user);
+		return null;
+	}
+
+	 
 }

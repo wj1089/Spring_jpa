@@ -4,15 +4,16 @@ import java.util.List;
 
 public interface UserDao {
 
-	 	List<User> selectAll();
+	public void insert(User user);
 
-	/*
-	 * public void insert(User user);
-	 * 
-	 * public User selectOne(String employNumber);
-	 * 
-	 * public void update(User user);
-	 * 
-	 * public void delete(User user);
-	 */
+	  public List<User> selectAll();
+	  
+	  public User selectOne(String userid);
+	  
+	  public void update(User user);
+	  
+	  public void delete(User user);
+
+	public void remove(User user);
+	 
 }
